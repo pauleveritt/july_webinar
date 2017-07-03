@@ -1,20 +1,21 @@
 July PyCharm Webinar
 ====================
 
-Let's take a look at some key PyCharm features, using web application
-development as the topic.
+Let's take a look at some key PyCharm features, using Flask web
+application development as the topic.
 
 Website is at http://www.pauleveritt.org/july_webinar/
 
+Contents
+--------
+
 .. toctree::
-   :maxdepth: 2
-   :caption: Contents:
+    :maxdepth: 1
 
-
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+    quick_intro/index.rst
+    editor/index.rst
+    vcs/index.rst
+    coding_assistance/index.rst
+    refactoring/index.rst
+    debugging/index.rst
+    database/index.rst
