@@ -1,10 +1,8 @@
-.. July PyCharm Webinar documentation master file, created by
-   sphinx-quickstart on Mon Jul  3 10:58:35 2017.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
+July PyCharm Webinar
+====================
 
-Welcome to July PyCharm Webinar's documentation!
-================================================
+Let's take a look at some key PyCharm features, using web application
+development as the topic.
 
 .. toctree::
    :maxdepth: 2
