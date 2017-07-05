@@ -6,6 +6,8 @@
 
 ## Start With
 
+- Arcade open
+
 - Default theme
 
 - No templating language

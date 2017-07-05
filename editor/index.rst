@@ -16,7 +16,7 @@ Features Shown
 Steps
 -----
 
-#. Double-click in Project Tool to open ``main.py``
+#. Double-click in Project Tool to open ``src/main.py``
 
 #. Close tab
 

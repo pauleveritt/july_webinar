@@ -24,6 +24,4 @@ Steps
 
 #. Adjust the IDE layout
 
-#. Create a Run Configuration
-
 #. Run and open URL in a browser

@@ -35,5 +35,7 @@ Steps
 
 #. Version Control -> Log messages
 
+#. Show this screen in Arcade
+
 #. Show Local History
 
