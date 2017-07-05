@@ -56,7 +56,8 @@ in dictionaries.</p>
 <ol class="arabic simple">
 <li>Stop the run, and run instead under the debugger, reload browser</li>
 <li>Edit the todo_list route to have, locally, a list of todos passed
-into the template</li>
+into the template, using <code class="docutils literal"><span class="pre">{%</span> <span class="pre">for</span> <span class="pre">todo</span> <span class="pre">in</span> <span class="pre">todos</span> <span class="pre">%}</span></code> and
+<code class="docutils literal"><span class="pre">{%</span> <span class="pre">endfor</span> <span class="pre">%}</span></code></li>
 <li>Edit the template to iterate over a sequence of todos in a <code class="docutils literal"><span class="pre">&lt;ul&gt;</span></code>,
 but <em>with an error</em></li>
 <li>Reload browser, see the error</li>

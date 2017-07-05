@@ -35,11 +35,15 @@ Steps
 
 #. Make a ``templates`` folder and mark it as a template folder
 
-#. Create the template file
+#. Create the template file at ``src/templates/todos.jinja2``
+
+#. Change route to ``return render_template('todos.jinja2')``
 
 #. Set language injection on the existing string of HTML
 
 #. Edit inline string to link to the new route
+
+#. Reload and view in browser
 
 #. Change to ``@appx`` to show the error
 

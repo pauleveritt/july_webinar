@@ -65,9 +65,11 @@ provides autocomplete, error highlighting, and quick fixes.</p>
 <li>Use Quick Preview to show documentation on the route</li>
 <li>Set PyCharm Preferences to use Jinja2 as template language</li>
 <li>Make a <code class="docutils literal"><span class="pre">templates</span></code> folder and mark it as a template folder</li>
-<li>Create the template file</li>
+<li>Create the template file at <code class="docutils literal"><span class="pre">src/templates/todos.jinja2</span></code></li>
+<li>Change route to <code class="docutils literal"><span class="pre">return</span> <span class="pre">render_template('todos.jinja2')</span></code></li>
 <li>Set language injection on the existing string of HTML</li>
 <li>Edit inline string to link to the new route</li>
+<li>Reload and view in browser</li>
 <li>Change to <code class="docutils literal"><span class="pre">&#64;appx</span></code> to show the error</li>
 <li>Leave out a space at the end to show PEP8 warning</li>
 <li>Pass in a count of todos using randint, with Alt-Enter to

@@ -16,7 +16,8 @@ Steps
 #. Stop the run, and run instead under the debugger, reload browser
 
 #. Edit the todo_list route to have, locally, a list of todos passed
-   into the template
+   into the template, using ``{% for todo in todos %}`` and
+   ``{% endfor %}``
 
 #. Edit the template to iterate over a sequence of todos in a ``<ul>``,
    but *with an error*

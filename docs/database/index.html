@@ -46,9 +46,59 @@ include DataGrip, our IDE for SQL databases.</p>
 <p>Let’s change the Flask todo list to get data from a database table.</p>
 <div class="section" id="features-shown">
 <h2>Features Shown<a class="headerlink" href="#features-shown" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Automatic install and import</li>
+</ul>
 </div>
 <div class="section" id="steps">
 <h2>Steps<a class="headerlink" href="#steps" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Add <code class="docutils literal"><span class="pre">db</span> <span class="pre">=</span> <span class="pre">SQLAlchemy(app)</span></code> then install and import it</li>
+<li>Config database</li>
+<li>Make the <code class="docutils literal"><span class="pre">Todo</span></code> model</li>
+<li>Use Python Console to import the db and call <code class="docutils literal"><span class="pre">db.create_all()</span></code></li>
+<li>Drag the <code class="docutils literal"><span class="pre">todos.db</span></code> file onto the Database tool</li>
+<li>Enter some todos and <code class="docutils literal"><span class="pre">Submit</span></code></li>
+<li>In Flask view, change the <code class="docutils literal"><span class="pre">todos</span></code> line to use a query</li>
+<li>Reload browser</li>
+<li><code class="docutils literal"><span class="pre">Optimize</span> <span class="pre">Imports</span></code> to get rid of the dead import of <code class="docutils literal"><span class="pre">randint</span></code></li>
+</ol>
+</div>
+<div class="section" id="code">
+<h2>Code<a class="headerlink" href="#code" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
+
+<span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span><span class="p">,</span> <span class="n">render_template</span>
+<span class="kn">from</span> <span class="nn">flask_sqlalchemy</span> <span class="kn">import</span> <span class="n">SQLAlchemy</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+<span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;SQLALCHEMY_DATABASE_URI&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;sqlite:///../todos.db&#39;</span>
+<span class="n">db</span> <span class="o">=</span> <span class="n">SQLAlchemy</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">Todo</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="nb">id</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">Integer</span><span class="p">,</span> <span class="n">primary_key</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="mi">80</span><span class="p">))</span>
+
+
+<span class="nd">@app.route</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">hello</span><span class="p">():</span>
+    <span class="k">return</span> <span class="s1">&#39;&lt;h1&gt;Hello World!&lt;/h1&gt;&lt;a href=&quot;/todos&quot;&gt;Todos&lt;/a&gt;&#39;</span>
+
+
+<span class="nd">@app.route</span><span class="p">(</span><span class="s1">&#39;/todos&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">todos_list</span><span class="p">():</span>
+    <span class="n">todos</span> <span class="o">=</span> <span class="n">Todo</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+    <span class="n">todo_count</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">todos</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s2">&quot;todos_list.jinja2&quot;</span><span class="p">,</span>
+                           <span class="n">todo_count</span><span class="o">=</span><span class="n">todo_count</span><span class="p">,</span>
+                           <span class="n">todos</span><span class="o">=</span><span class="n">todos</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">debug</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</pre></div>
+</div>
 </div>
 </div>
 
