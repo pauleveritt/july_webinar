@@ -14,4 +14,6 @@
 
 - IDE layout in defaults
 
+- "Description of Actions" to get Presentation Assistant
+
 - ``main.py`` instead of ``app.py``
